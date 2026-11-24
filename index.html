@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Celularity Inc. (Nasdaq: CELU) | Investor Relations Concept</title>
+<meta name="description" content="An independent design concept for the Celularity (Nasdaq: CELU) investor relations page. Not affiliated with Celularity Inc.; the official IR site is https://celularity.com/investor-relations/.">
+<link rel="icon" href="img/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&amp;family=Azeret+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* mc:tokens */
+:root{
+  /* palette.mjs --brand "#574098,#1c9ba1" --strategy committed  (committed)
+     accent   #574098 oklch(0.443 0.138 291.8)
+     accent-2 #1c9ba1 oklch(0.629 0.102 200)
+     measured: white on --accent-ink 7.53:1, --accent-ink on --paper 7.31:1, --text-mid on --tint 5.65:1 */
+  --H: 291.8; --Hn: 291.8;
+  --accent:        oklch(0.78 0.121 291.8); /* bright: fills on light stock; text only on dark where --check proves >= 4.5; derived L0.78 */
+  --accent-lo:     oklch(0.78 0.121 291.8 / 0.14);
+  --accent-lt:     oklch(0.86 0.075 291.8); /* bright accent ON dark surfaces */
+  --accent-ink:    oklch(0.46 0.138 291.8); /* TEXT, links, primary-button background */
+  --accent-ink-d:  oklch(0.40 0.127 291.8); /* hover */
+  --accent-2:      oklch(0.629 0.102 200); /* real */
+  --accent-2-lt:   oklch(0.86 0.081 200);
+  --accent-2-ink:  oklch(0.46 0.078 200);
+  --ink:           oklch(0.26 0.010 291.8); /* headings */
+  --deep:          oklch(0.25 0.060 291.8); /* permanently dark band */
+  --deep-2:        oklch(0.18 0.048 291.8); /* gravest band / footer */
+  --paper:         oklch(0.99 0.004 291.8);
+  --card:          oklch(0.996 0.002 291.8);
+  --tint:          oklch(0.965 0.017 291.8); /* .sec-tint band, concept note, card interiors */
+  --tint-2:        oklch(0.91 0.035 291.8); /* borders, ghost outlines, the darker of two light bands */
+  --text:          oklch(0.31 0.009 291.8);
+  --text-mid:      oklch(0.49 0.011 291.8);
+  --line:          oklch(0.30 0.010 291.8 / 0.13);
+  --line-d:        oklch(0.98 0.010 291.8 / 0.14);
+  /* surface-slot defaults (foundation surface block); retune in surface.css */
+  --sheet-edge:    oklch(0.40 0.127 291.8 / 0.26);
+  --blind:         oklch(1.00 0.000 0 / 0.5);
+  --blind-k:       oklch(1.00 0.000 0 / 0.85);
+  --sheet-neg:     oklch(0.98 0.010 291.8 / 0.05);
+  --serif:         'Montserrat', system-ui, sans-serif;
+  --sans:          'Literata', Georgia, serif;
+  --mono:          'Azeret Mono', ui-monospace, monospace;
+  --wrap: 1140px; --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* mc:substrate 9576b9be1505 */
+/* mediaconsole substrate: inlined by scripts/scaffold.mjs, identical on every page. Never edit or retype it;
+   override in page/layer.css or page/surface.css (both load after it). Band: all. Hue-parametric: colours are
+   tokens or oklch(... var(--Hn)). Integrity: opaque nav, content visible without JS, print and forced-colors safe. */
+:where(:root){--wrap:1140px;--ease:cubic-bezier(0.22, 1, 0.36, 1)}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;scroll-padding-top:88px}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none} img,svg{display:block;max-width:100%} button{font:inherit;cursor:pointer}
+::selection{background:var(--accent-lt);color:var(--deep)}
+:focus-visible{outline:2px solid var(--accent-ink);outline-offset:3px;border-radius:2px}
+.sec-dark :focus-visible,.snapshot :focus-visible,footer :focus-visible{outline-color:var(--accent-lt)}
+.wrap{width:min(var(--wrap),100% - 44px);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--deep);color:#fff;padding:10px 16px;border-radius:6px;font-size:.85rem;transition:top .2s var(--ease)}
+.skip-link:focus{top:12px}
+.concept-note{background:var(--tint);color:var(--accent-ink-d);font-size:.78rem;text-align:center;padding:8px 16px;position:relative;z-index:101}
+.concept-note a{color:inherit;font-weight:600;text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--ink)}
+h1{font-size:clamp(2.35rem,5.3vw,4rem)} h2{font-size:clamp(1.7rem,3.4vw,2.5rem)} h3{font-size:clamp(1.15rem,2vw,1.4rem)}
+p{max-width:68ch}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}
+.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.lead{font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.55;color:var(--text-mid)}
+/* four house buttons: primary + ghost on light stock, primary-light + ghost-light on dark stock.
+   Text on dark uses --accent-lt, never --accent (D16: --accent may be a mid-L real brand colour; it is a fill). */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:11px 22px;border-radius:8px;font-family:var(--sans);font-size:.82rem;font-weight:600;letter-spacing:.02em;border:1.5px solid transparent;background:transparent;transition:background .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
+.btn:hover{transform:translateY(-1px)} .btn .arw{font-family:var(--mono);transition:transform .2s var(--ease)} .btn:hover .arw{transform:translateX(3px)}
+.btn-primary{background:var(--accent-ink);color:#fff} .btn-primary:hover{background:var(--accent-ink-d)}
+.btn-ghost{border-color:var(--tint-2);color:var(--accent-ink)} .btn-ghost:hover{background:var(--tint);border-color:var(--accent-ink)}
+.btn-primary-light{background:var(--accent-lt);color:var(--deep)} .btn-primary-light:hover{background:var(--tint)}
+.btn-ghost-light{border-color:oklch(0.98 0.01 var(--Hn)/.4);color:#fff} .btn-ghost-light:hover{background:oklch(0.98 0.01 var(--Hn)/.1)}
+/* nav: opaque by rule (no translucency, no blur); markup is emitted by scaffold.mjs from page.json */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease)}
+.site-nav.scrolled{box-shadow:0 6px 24px oklch(0.3 0.02 var(--Hn)/.07)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.nav-brand{display:flex;align-items:center;gap:12px;min-height:44px;min-width:0}
+.nav-logo{display:flex;align-items:center;flex:none}
+.nav-logo img{height:26px;width:auto}
+.nav-name{font-family:var(--serif);font-size:1.2rem;line-height:1.1;color:var(--ink)}
+.nav-tick{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;color:var(--text-mid);border:1px solid var(--line);border-radius:5px;padding:4px 8px}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a:not(.btn){font-size:.86rem;font-weight:500;color:var(--text-mid);transition:color .2s var(--ease)}
+.nav-links a:not(.btn):hover{color:var(--accent-ink)}
+.nav-links a.active{color:var(--ink);text-decoration:underline;text-underline-offset:7px;text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.nav-burger{display:none;flex-direction:column;gap:5px;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:none}
+.nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s var(--ease),opacity .2s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* bands: FLAT FILLS, the floor only; page/surface.css must override them (verify FAILs flat pages) */
+main{display:block;overflow-x:clip}   /* a translated reveal or wide motif can never widen the page */
+main>section{padding:clamp(56px,8vw,104px) 0}
+.sec-white{background:var(--paper)} .sec-tint{background:var(--tint)}
+.sec-dark{background:var(--deep);color:oklch(0.9 0.008 var(--Hn))}
+.sec-dark h1,.sec-dark h2,.sec-dark h3{color:#fff} .sec-dark .eyebrow{color:var(--accent-lt)} .sec-dark .eyebrow::before{background:var(--accent)}
+.sec-dark .lead{color:oklch(0.86 0.01 var(--Hn))}
+.sec-head{max-width:660px;margin-bottom:clamp(36px,5vw,56px)} .sec-head p{margin-top:14px}
+/* data sits on its own plate: table.fin cells are transparent, never paint a band behind figures */
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+table.fin{width:100%;border-collapse:collapse;min-width:540px;font-size:.92rem}
+table.fin caption{text-align:left;font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-mid);padding:14px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+table.fin th,table.fin td{text-align:left;padding:14px 20px;border-bottom:1px solid var(--line)}
+table.fin tbody tr:last-child td{border-bottom:none}
+table.fin td.num{font-family:var(--mono);text-align:right;color:var(--ink);font-weight:500}
+table.fin thead th{font-weight:700;color:var(--ink);background:var(--card)}
+footer{background:var(--deep);color:oklch(0.76 0.008 var(--Hn));padding:56px 0 28px}
+.fls{padding:32px 0 0;font-size:.78rem;line-height:1.7;color:oklch(0.68 0.008 var(--Hn));max-width:98ch} .fls b{color:oklch(0.85 0.01 var(--Hn))}
+.fls a{color:inherit;text-decoration:underline} .fls+.fls{padding-top:14px}
+.market-note{padding-top:18px;margin-top:18px;border-top:1px solid var(--line-d);font-size:.72rem;line-height:1.7;color:oklch(0.68 0.008 var(--Hn))}
+/* reveal: hidden only once motion.js has set html.js, so no-JS and JS failure show everything.
+   Direction variants set --reveal-from (components/motion-extra.css); stagger with style="--d:.08s". */
+.reveal{transition:opacity .65s var(--ease),transform .65s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal:not(.in){opacity:0;transform:var(--reveal-from,translateY(20px))}
+/* motif pause: motion.js toggles .paused on #hero-motif off-screen, in a hidden tab, or via [data-motif-toggle] */
+.paused,.paused::before,.paused::after,.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
+@media (max-width:900px){
+  .nav-burger{display:flex}
+  .nav-links{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:2px;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 22px 20px;opacity:0;transform:translateY(-10px);visibility:hidden;pointer-events:none;transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s;box-shadow:0 16px 30px oklch(0.3 0.02 var(--Hn)/.08)}
+  .nav-links.open{opacity:1;transform:none;visibility:visible;pointer-events:auto}
+  .nav-links li{width:100%} .nav-links a:not(.btn){display:block;padding:12px 0} .nav-links .btn{margin-top:10px;display:inline-flex}
+}
+@media (max-width:768px){ .footer-links a,.contact-col a{min-height:44px;display:flex;align-items:center} }   /* 44px tap targets; (0,1,1) so layer.css can restyle */
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important}
+  .reveal{transition:none} .js .reveal:not(.in){opacity:1;transform:none}
+  .btn:hover{transform:none} [class*="motif"]{animation:none!important} [data-motif-toggle]{display:none}
+}
+/* print (D12): decoration off, every reveal shown, dark bands re-inked dark-on-white (backgrounds may not print).
+   A custom dark band must carry .sec-dark so this, its focus ring and its heading colour all apply. */
+@media print{
+  *,*::before,*::after{background-image:none!important;box-shadow:none!important;text-shadow:none!important;animation:none!important;transition:none!important}
+  .site-nav{position:static} .nav-burger,.skip-link,[data-motif-toggle]{display:none!important}
+  .js .reveal:not(.in){opacity:1!important;transform:none!important}
+  .sec-dark,.sec-dark *,.hero,.hero *,.snapshot,.snapshot *,footer,footer *{background-color:transparent!important;color:#111!important;border-color:#bbb!important}
+  .sec-white,.sec-tint,.sec-dark,footer{background-color:#fff!important;border-top:1px solid #bbb}
+  .btn{background:transparent!important;color:#111!important;border-color:#111!important}
+  .table-scroll{overflow:visible;background:#fff!important}
+  main>section{padding:28px 0}
+}
+/* forced colors: the UA repaints every band to Canvas, so bands get a system seam instead */
+@media (forced-colors:active){
+  .sec-white,.sec-tint,.sec-dark,footer{background-image:none;border-top:1px solid CanvasText}
+  .btn{border-color:ButtonText}
+  .nav-burger span{forced-color-adjust:none;background:CanvasText}
+  .table-scroll{border-color:CanvasText}
+}
+/* mc:nav (computed: the listing chip stops fitting beside logo + burger) */
+@media (max-width:363px){.nav-tick{display:none}}
+/* mc:layer */
+/* Celularity visible layer. Archetype: editorial-asymmetric. Every band is a ragged 1.2 / 0.8 split whose
+   narrow side is a full-bleed mass (photo, purple field or plate); text columns align to the 1140px wrap by
+   padding = max(22px, half-width-maths). Committed colour: the real purple #574098 carries the hero field,
+   two dark bands and two fields; the real teal #1c9ba1 is a fill only (rings, bars, dots). */
+:root{
+  --brand: oklch(0.443 0.138 291.8);      /* the logo purple, exact */
+  --brand-d: oklch(0.33 0.115 291.8);
+  --on-brand: oklch(0.985 0.006 291.8);
+  --on-brand-mid: oklch(0.90 0.035 291.8);
+  --ring-teal: oklch(0.80 0.09 200 / 0.55);
+}
+h1,h2,h3{font-weight:700;letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,4.6vw,3.7rem);line-height:1.04}
+h2{font-size:clamp(1.75rem,3.2vw,2.6rem);line-height:1.08}
+body{font-size:17px;line-height:1.65}
+.lead{font-family:var(--sans);font-style:italic;color:var(--text)}
+.nowrap,.arw,.btn,.nav-links a{white-space:nowrap}
+.cite{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-lo);padding:4px 8px;border-radius:4px;white-space:nowrap}
+.cite:hover{background:var(--tint-2)}
+.note{font-size:.86rem;color:var(--text-mid);margin-top:18px}
+dd,.num,.bv,.dn,.act-n,time{font-variant-numeric:lining-nums tabular-nums}
+
+/* ---------- hero: purple field (1.18) | real photograph (0.82) ---------- */
+.hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);padding:0;background:var(--brand);color:var(--on-brand);min-height:min(88vh,780px)}
+.hero-field{position:relative;overflow:hidden;padding:clamp(56px,7vw,92px) clamp(28px,4vw,60px) clamp(44px,5vw,64px) max(22px,calc(84.75% - 570px));display:flex;align-items:center}
+.hero-copy{position:relative;z-index:2;max-width:640px}
+.hero .eyebrow{color:var(--accent-lt)} .hero .eyebrow::before{background:var(--accent-2-lt)}
+.hero h1{color:var(--on-brand)}
+.hero-sub{margin-top:20px;font-size:clamp(1.02rem,1.4vw,1.16rem);color:var(--on-brand-mid);max-width:58ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn-light{background:var(--on-brand);color:var(--brand-d)} .btn-light:hover{background:var(--tint)}
+.proofs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:clamp(32px,4vw,44px);border-top:1px solid oklch(0.98 0.02 291.8 / .32)}
+.proofs>div{padding:18px 18px 0 0}
+.proofs>div+div{padding-left:18px;border-left:1px solid oklch(0.98 0.02 291.8 / .22)}
+.proofs dt{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-brand-mid)}
+.proofs dd{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,2.6vw,2.3rem);line-height:1.1;margin-top:6px;color:var(--on-brand)}
+.proofs p{font-size:.82rem;color:var(--on-brand-mid);margin-top:4px;line-height:1.45}
+.hero-src{font-size:.76rem;color:var(--on-brand-mid);margin-top:20px;max-width:72ch}
+.hero-src a{text-decoration:underline;text-underline-offset:3px}
+.hero-ring{position:absolute;right:-140px;bottom:-170px;width:min(720px,80%);height:auto;z-index:1;pointer-events:none}
+.hero-ring circle{fill:none;stroke-width:1.5}
+.ring-a,.ring-c{stroke:oklch(0.98 0.02 291.8 / .16)}
+.ring-b,.ring-d{stroke:var(--ring-teal)}
+.ring-a,.ring-b{stroke-dasharray:6 10}
+.motif-ring{animation:motif-orbit 60s linear infinite}
+.ring-b.motif-ring,.ring-d.motif-ring{animation-direction:reverse}
+@keyframes motif-orbit{to{stroke-dashoffset:-1068}}
+#hero-motif.paused .motif-ring{animation-play-state:paused}
+.hero-photo{position:relative;margin:0;min-height:100%}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:34% 50%}
+.hero-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 22px 18px;font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;color:var(--on-brand);background:linear-gradient(to top,oklch(0.16 0.04 291.8 / .86),transparent)}
+
+/* ---------- editorial split rows (cenplacel, performance) ---------- */
+.cenp,.perf{padding:0}
+.ed{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+.ed-main{padding:clamp(56px,8vw,104px) clamp(32px,5vw,72px) clamp(56px,8vw,96px) max(22px,calc(83.333% - 570px))}
+.ed-main .lead{margin-top:16px}
+.ed-main p+p{margin-top:16px}
+.ruled{list-style:none;margin-top:28px;border-top:2px solid var(--ink)}
+.ruled li{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr) auto;gap:6px 22px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.ruled b{font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--accent-ink)}
+.ruled span{font-size:.95rem}
+/* the plate is a full-height specimen: the render grows to fill whatever the text column leaves */
+.cenp-plate{margin:0;position:relative;display:flex;flex-direction:column;padding:0 0 clamp(40px,5vw,64px)}
+.cenp-plate img{flex:1 1 auto;width:100%;height:0;min-height:420px;object-fit:cover;object-position:50% 50%;filter:drop-shadow(0 18px 30px oklch(0.443 0.138 291.8 / .22))}
+.cenp-plate figcaption,.plate-stat{margin:18px max(22px,calc(125% - 855px)) 0 clamp(28px,4vw,52px)}
+.cenp-plate figcaption{font-size:.86rem;color:var(--text-mid);max-width:40ch}
+.cenp-plate figcaption b{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;color:var(--accent-ink);margin-bottom:4px}
+.plate-stat{border-top:2px solid var(--brand);padding-top:14px}
+.plate-stat dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-mid)}
+.plate-stat dd{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,3.2vw,2.8rem);color:var(--brand);line-height:1.1;margin-top:4px}
+.plate-stat p{font-size:.84rem;color:var(--text-mid)}
+
+/* ---------- platform: the signature figure ---------- */
+.plat-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(32px,5vw,72px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
+.plat-quote{border-top:1px solid var(--line-d);padding-top:18px}
+.plat-quote p{font-style:italic;font-size:1.06rem;color:var(--on-brand)}
+.plat-quote cite{display:block;font-style:normal;font-size:.8rem;color:var(--on-brand-mid);margin-top:10px}
+.plat-quote cite a{text-decoration:underline;text-underline-offset:3px}
+.plat-h{font-weight:800}
+.plat-h span{font-weight:500;color:var(--accent-lt)}
+.plat-fig{display:grid;grid-template-columns:minmax(0,1fr) 400px minmax(0,1fr);grid-template-rows:auto auto;gap:28px 24px;align-items:center}
+.n1{grid-column:1;grid-row:1} .n2{grid-column:1;grid-row:2} .n3{grid-column:3;grid-row:1} .n4{grid-column:3;grid-row:2}
+.hub{grid-column:2;grid-row:1 / 3;align-self:stretch;display:flex;align-items:center}
+.hub svg{width:100%;height:auto;overflow:visible}
+.spoke{stroke:oklch(0.86 0.081 200 / .55);stroke-width:1.4;stroke-dasharray:3 6}
+.hub-a{fill:oklch(0.443 0.138 291.8 / .45);stroke:oklch(0.86 0.075 291.8);stroke-width:2.5}
+.hub-b{fill:oklch(0.629 0.102 200 / .22);stroke:oklch(0.80 0.09 200);stroke-width:2.5}
+.motif-hub{stroke-dasharray:14 6;animation:motif-orbit 48s linear infinite}
+.hub-b.motif-hub{animation-direction:reverse}
+.hub-t{fill:var(--on-brand);font-family:var(--serif);font-weight:800;font-size:23px;paint-order:stroke;stroke:var(--deep);stroke-width:7px;stroke-linejoin:round}
+.hub-o{fill:none;stroke:oklch(0.86 0.081 200 / .22);stroke-width:1;stroke-dasharray:2 7;animation-duration:90s}
+.hub-dot{fill:var(--accent-2)}
+.node{display:grid;grid-template-columns:112px minmax(0,1fr);gap:4px 20px;align-items:start;padding:20px 0;border-top:1px solid var(--line-d)}
+.node img{grid-row:1 / 4;width:112px;height:112px;object-fit:contain;border-radius:50%;background:radial-gradient(circle,oklch(0.629 0.102 200 / .28),transparent 70%)}
+.node-k{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2-lt)}
+.node h3{color:#fff;font-size:1.3rem}
+.node p:not(.node-k){font-size:.9rem;color:oklch(0.88 0.025 291.8)}
+.n3,.n4{grid-template-columns:minmax(0,1fr) 112px}
+.n3 img,.n4 img{grid-column:2}
+.n3>:not(img),.n4>:not(img){grid-column:1}
+
+/* ---------- manufacturing: photo (0.85) | copy (1.15) ---------- */
+.mfg{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);padding:0}
+.mfg-photo{margin:0;position:relative;min-height:520px}
+.mfg-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.mfg-copy{padding:clamp(56px,8vw,104px) max(22px,calc(86.96% - 570px)) clamp(56px,8vw,96px) clamp(32px,5vw,72px)}
+.mfg-h{font-size:clamp(2.4rem,5.2vw,4.4rem);font-weight:800;line-height:.98;letter-spacing:-.035em}
+.mfg-h em{font-style:normal;color:var(--accent-ink)}
+.mfg-copy .lead{margin-top:22px}
+.diff{list-style:none;margin-top:30px;display:grid;gap:0}
+.diff li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.dn{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--accent-ink);line-height:1.2}
+.diff b{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
+.diff p{font-size:.92rem;color:var(--text-mid);margin-top:2px}
+.deals{margin-top:30px}
+.deals-h{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid);margin-bottom:8px}
+.deal{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;min-height:56px;padding:10px 0;border-top:1px solid var(--line);color:var(--ink);transition:color .2s var(--ease)}
+.deal:last-child{border-bottom:1px solid var(--line)}
+.deal time{font-family:var(--mono);font-size:.74rem;color:var(--accent-2-ink);font-weight:500}
+.deal:hover{color:var(--accent-ink)} .deal .arw{transition:transform .2s var(--ease);font-style:normal} .deal:hover .arw{transform:translateX(3px)}
+
+/* ---------- performance ---------- */
+.bars{margin-top:30px}
+.bars svg{width:100%;max-width:620px;height:auto}
+.axis{stroke:var(--ink);stroke-width:1.5}
+.b-old{fill:var(--tint-2)} .b-ct{fill:var(--accent-2)} .b-ox{fill:var(--brand)}
+.bv{font-family:var(--mono);font-size:15px;font-weight:500;fill:var(--ink);text-anchor:middle}
+.bq{font-family:var(--mono);font-size:12px;fill:var(--text-mid);text-anchor:middle}
+/* group headings live in HTML so they keep a readable size when the SVG scales down on a phone;
+   the grid mirrors the SVG groups (x 20-260 and 300-540 of 560) */
+.bars-k{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:7.14%;padding:0 3.57%;max-width:620px;margin-top:2px;font-family:var(--serif);font-weight:700;font-size:.92rem;color:var(--ink);line-height:1.3}
+.bars figcaption{font-size:.8rem;color:var(--text-mid);margin-top:8px;max-width:62ch}
+.bars figcaption a,.fin-note a,.cap-src a,.plist-src a{text-decoration:underline;text-underline-offset:3px}
+.capital{color:var(--on-brand);padding:clamp(56px,8vw,104px) max(22px,calc(125% - 855px)) clamp(48px,6vw,80px) clamp(28px,4vw,52px);display:flex;flex-direction:column;justify-content:center}
+.cap-h{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-lt)}
+.cap-list{list-style:none;margin-top:14px}
+.cap-list li{display:grid;grid-template-columns:62px minmax(0,1fr);gap:2px 14px;padding:16px 0;border-top:1px solid oklch(0.98 0.02 291.8 / .24)}
+.cap-list time{grid-row:1 / 3;font-family:var(--mono);font-size:.72rem;color:var(--on-brand-mid);padding-top:6px}
+.cap-list b{font-family:var(--serif);font-weight:800;font-size:1.55rem;line-height:1.15}
+.cap-list span{font-size:.88rem;color:var(--on-brand-mid);line-height:1.45}
+.cap-src{font-size:.74rem;color:var(--on-brand-mid);margin-top:14px}
+.fin-wrap{padding-bottom:clamp(56px,8vw,96px)}
+#performance .table-scroll>table.fin{min-width:620px}
+table.fin th[scope="row"]{font-weight:500;color:var(--ink)}
+table.fin th.num{text-align:right}
+table.fin td.num{white-space:nowrap}
+.fin-note{font-size:.8rem;color:var(--text-mid);margin-top:12px;max-width:96ch}
+.fin-more{margin-top:20px;border-top:1px solid var(--line)}
+.fin-more summary{cursor:pointer;min-height:48px;display:flex;align-items:center;font-family:var(--serif);font-weight:600;color:var(--accent-ink)}
+.fin-more-body{display:grid;gap:18px;padding:8px 0 4px}
+
+/* ---------- partners: portrait (0.82) | list (1.18) ---------- */
+.partners{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);padding:0}
+.ceo{margin:0;position:relative;min-height:560px}
+.ceo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.ceo figcaption{position:absolute;left:0;right:0;bottom:0;padding:64px 22px 20px max(22px,calc(121.95% - 570px));font-size:.86rem;color:var(--on-brand-mid);background:linear-gradient(to top,oklch(0.16 0.04 291.8 / .92) 30%,transparent)}
+.ceo figcaption b{display:block;color:#fff;font-family:var(--serif);font-size:1.05rem}
+.part-copy{padding:clamp(56px,8vw,104px) max(22px,calc(84.75% - 570px)) clamp(56px,8vw,96px) clamp(32px,5vw,72px)}
+.part-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,190px);gap:12px 32px;align-items:end}
+.part-dek{font-family:var(--mono);font-size:.74rem;letter-spacing:.04em;line-height:1.6;color:var(--accent-2-lt);border-top:2px solid oklch(0.80 0.09 200 / .55);padding-top:10px}
+.plist{list-style:none;margin-top:26px}
+.plist li{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px 0;border-top:1px solid var(--line-d)}
+.plist time{font-family:var(--mono);font-size:.72rem;color:var(--accent-2-lt);padding-top:4px}
+.plist b{font-family:var(--serif);color:#fff;font-size:1.08rem}
+.plist p{font-size:.9rem;color:oklch(0.86 0.025 291.8);margin-top:2px}
+.plist-src{font-size:.76rem;color:oklch(0.80 0.025 291.8);margin-top:14px}
+
+/* ---------- news: list (1.2) | photo (0.8) ---------- */
+.news{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);padding:0}
+.news-copy{padding:clamp(56px,8vw,104px) clamp(32px,5vw,72px) clamp(56px,8vw,96px) max(22px,calc(83.333% - 570px))}
+.nlist{list-style:none;margin:24px 0 28px;border-top:2px solid var(--ink)}
+.nlist li{display:grid;grid-template-columns:118px minmax(0,1fr);gap:16px;align-items:center;border-bottom:1px solid var(--line)}
+.nlist time{font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;color:var(--text-mid)}
+.nlist a{display:block;padding:14px 0;min-height:48px;color:var(--ink);font-size:.98rem;line-height:1.45;transition:color .2s var(--ease)}
+.nlist a:hover{color:var(--accent-ink)}
+.nlist .arw{font-style:normal;color:var(--accent-ink)}
+.news-photo{margin:0;position:relative;min-height:480px}
+.news-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+
+/* ---------- investors: purple field (0.9) | actions (1.1) ---------- */
+.inv{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);padding:0}
+.inv-field{color:var(--on-brand);padding:clamp(56px,8vw,96px) clamp(28px,4vw,56px) clamp(56px,8vw,96px) max(22px,calc(111.1% - 570px))}
+.inv-field .eyebrow{color:var(--accent-lt)} .inv-field .eyebrow::before{background:var(--accent-2-lt)}
+.inv-field h2{color:var(--on-brand)}
+.inv-facts{margin-top:26px}
+.inv-facts>div{padding:12px 0;border-top:1px solid oklch(0.98 0.02 291.8 / .24)}
+.inv-facts dt{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-brand-mid)}
+.inv-facts dd{font-family:var(--serif);font-weight:700;font-size:1.15rem;margin-top:2px}
+.inv-facts dd a{text-decoration:underline;text-underline-offset:4px}
+.inv-facts p{font-size:.8rem;color:var(--on-brand-mid)}
+.inv-photo{margin:30px 0 0}
+.inv-photo img{width:100%;height:auto;aspect-ratio:624/311;object-fit:cover;border-radius:6px;box-shadow:0 18px 36px oklch(0.443 0.138 291.8 / .22)}
+.inv-photo figcaption{font-size:.8rem;color:var(--text-mid);margin-top:10px}
+.inv-photo figcaption a{text-decoration:underline;text-underline-offset:3px}
+.inv-actions{display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,6vw,88px) max(22px,calc(90.9% - 570px)) clamp(48px,6vw,88px) clamp(28px,4vw,56px)}
+.act{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:16px;align-items:center;min-height:84px;padding:14px 0;border-top:1px solid var(--line);color:var(--ink);transition:color .2s var(--ease)}
+.act:last-child{border-bottom:1px solid var(--line)}
+.act-n{font-family:var(--mono);font-size:1.3rem;color:var(--accent-ink)}
+.act b{display:block;font-family:var(--serif);font-size:1.12rem}
+.act small{display:block;font-size:.86rem;color:var(--text-mid);margin-top:2px}
+.act .arw{font-style:normal;color:var(--accent-ink);transition:transform .2s var(--ease)}
+.act:hover{color:var(--accent-ink)} .act:hover .arw{transform:translateX(4px)}
+
+/* ---------- footer ---------- */
+.foot-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line-d)}
+.foot-logo{height:30px;width:auto}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.86rem}
+.footer-links a{text-decoration:underline;text-underline-offset:3px;color:oklch(0.86 0.02 291.8)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .plat-fig{grid-template-columns:minmax(0,1fr) 260px minmax(0,1fr)}
+}
+@media (max-width:900px){
+  .hero,.ed,.mfg,.partners,.news,.inv{grid-template-columns:minmax(0,1fr)}
+  .hero-field,.ed-main,.mfg-copy,.part-copy,.news-copy,.inv-field,.inv-actions{padding:56px 22px}
+  .capital{padding:44px 22px}
+  .cenp-plate{padding:0 0 44px}
+  .cenp-plate img{flex:none;height:340px;min-height:0}
+  .cenp-plate figcaption,.plate-stat{margin-left:22px;margin-right:22px}
+  .part-head{grid-template-columns:minmax(0,1fr)}
+  .hero-photo{min-height:320px}
+  .mfg-photo{min-height:320px;order:-1}
+  .ceo{min-height:420px}
+  .ceo figcaption{padding-left:22px}
+  .news-photo{min-height:300px}
+  .plat-head{grid-template-columns:minmax(0,1fr)}
+  .plat-fig{grid-template-columns:minmax(0,1fr);gap:0}
+  .hub{grid-column:1;grid-row:auto;order:-1;max-width:300px;margin:0 auto 12px}
+  .spoke,.hub-dot{display:none}
+  .n1,.n2,.n3,.n4{grid-column:1;grid-row:auto}
+  .n3,.n4{grid-template-columns:96px minmax(0,1fr)}
+  .n3 img,.n4 img{grid-column:1}
+  .n3>:not(img),.n4>:not(img){grid-column:2}
+  .node{grid-template-columns:96px minmax(0,1fr)}
+  .node img{width:96px;height:96px}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .proofs{grid-template-columns:minmax(0,1fr)}
+  .proofs>div,.proofs>div+div{padding:14px 0 0;border-left:none}
+  .proofs>div+div{border-top:1px solid oklch(0.98 0.02 291.8 / .22);margin-top:14px}
+  .ruled li{grid-template-columns:minmax(0,1fr)}
+  .ruled .cite{justify-self:start}
+  .nlist li,.plist li{grid-template-columns:minmax(0,1fr);gap:2px}
+  .nlist li{padding-top:10px}
+  .nlist a{padding:2px 0 12px}
+  .cap-list li{grid-template-columns:minmax(0,1fr)}
+  .cap-list time{grid-row:auto;padding-top:0}
+  .bv{font-size:24px} .bq{font-size:23px}   /* x 346/560 = 14.8px and 14.2px on a 390px screen */
+  .act{grid-template-columns:40px minmax(0,1fr) auto}
+}
+@media (prefers-reduced-motion:reduce){ .motif-ring,.motif-hub{animation:none} }
+@media print{
+  .hero,.hero-field,.capital,.inv-field{background:#fff!important;color:#000!important}
+  .hero *,.capital *,.inv-field *{color:#000!important}
+  .hero-ring{display:none}
+}
+/* mc:surface */
+/* Surface system: the culture dish. The signature is a placenta drawn as two overlapping rings, so every
+   stock is ringed from its own split seam, as if the specimen sat in the side field and the page were the dish.
+   Polarity flip: printed purple rings on white stock, BLIND WHITE rule ladder on tint stock, negative rings on
+   the dark bands (centred on the platform hub), and a sheen plus one logo-ring echo on the purple fields.
+   Light stock: trim hairlines first (unreachable: 11px in, text >= 22px in), then the translucent head wash,
+   then ink LAST so the darkest composite is the bare stock. */
+:root{
+  --rule:      oklch(0.443 0.138 291.8 / 0.045);  /* printed dish ring on white */
+  --sheet-edge:oklch(0.40 0.127 291.8 / 0.26);
+  --blind:     oklch(1 0 0 / 0.5);
+  --blind-k:   oklch(1 0 0 / 0.85);
+  --sheet-neg: oklch(0.98 0.010 291.8 / 0.05);
+  --seam: 60%;                                    /* the 1.2 / 0.8 split seam on .ed rows */
+}
+.sec-white{background-color:var(--paper);
+  background-image:linear-gradient(var(--sheet-edge),var(--sheet-edge)),
+                   linear-gradient(var(--sheet-edge),var(--sheet-edge)),
+                   linear-gradient(to bottom,oklch(0.965 0.017 291.8 / .9) 0,oklch(0.965 0.017 291.8 / 0) 230px),
+                   repeating-radial-gradient(circle at var(--seam) 50%,transparent 0 27px,var(--rule) 27px 28px);
+  background-size:1px 100%,1px 100%,100% 100%,100% 100%;
+  background-position:11px 0,calc(100% - 11px) 0,0 0,0 0;
+  background-repeat:no-repeat,no-repeat,no-repeat,no-repeat}
+.inv.sec-white{--seam:45%}                        /* investors split is .9 / 1.1 */
+.sec-tint{background-color:var(--tint);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 18px,var(--blind) 18px 19px),
+                   repeating-linear-gradient(to bottom,transparent 0 94px,var(--blind-k) 94px 95px),
+                   linear-gradient(var(--blind-k),var(--blind-k));
+  background-size:100% 100%,100% 100%,1px 100%;
+  background-position:0 0,0 0,calc(100% - 11px) 0;
+  background-repeat:repeat,repeat,no-repeat}
+.sec-dark{background-color:var(--deep);
+  background-image:radial-gradient(48% 62% at 50% 62%,oklch(0.629 0.102 200 / .16),oklch(0.629 0.102 200 / 0) 70%),
+                   repeating-radial-gradient(circle at 50% 62%,transparent 0 27px,var(--sheet-neg) 27px 28px),
+                   linear-gradient(oklch(0.98 0.010 291.8 / .12),oklch(0.98 0.010 291.8 / .12));
+  background-size:100% 100%,100% 100%,1px 100%;
+  background-position:0 0,0 0,calc(100% - 11px) 0;
+  background-repeat:no-repeat,no-repeat,no-repeat}
+.partners.sec-dark{background-image:radial-gradient(60% 70% at 100% 0%,oklch(0.629 0.102 200 / .14),oklch(0.629 0.102 200 / 0) 70%),
+                   repeating-radial-gradient(circle at 41% 50%,transparent 0 27px,var(--sheet-neg) 27px 28px)}
+/* purple fields: the hero, the capital aside, the investor field */
+.hero-field{background-color:var(--brand);
+  background-image:radial-gradient(60% 55% at 92% 100%,oklch(0.629 0.102 200 / .20),oklch(0.629 0.102 200 / 0) 70%),
+                   linear-gradient(160deg,var(--brand) 0,var(--brand-d) 100%)}
+.capital,.inv-field{background-color:var(--brand);
+  background-image:radial-gradient(circle at 100% 100%,transparent 0 160px,oklch(0.98 0.02 291.8 / .10) 160px 161px,transparent 161px 214px,oklch(0.80 0.09 200 / .22) 214px 215px,transparent 215px),
+                   linear-gradient(150deg,oklch(1 0 0 / .05) 0,oklch(1 0 0 / 0) 55%),
+                   linear-gradient(to bottom,var(--brand) 0,var(--brand-d) 100%)}
+/* the specimen plate beside cenplacel-L: a tint field with a teal bloom behind the cells */
+.cenp-plate{background-color:var(--tint);
+  background-image:radial-gradient(42% 36% at 50% 34%,oklch(0.629 0.102 200 / .16),oklch(0.629 0.102 200 / 0) 70%),
+                   repeating-linear-gradient(to bottom,transparent 0 18px,var(--blind) 18px 19px)}
+.table-scroll{background:var(--card)}
+@media print{ .sec-white,.sec-tint,.sec-dark,.hero-field,.capital,.inv-field,.cenp-plate{background-image:none} }
+@media (forced-colors:active){ .capital,.inv-field,.hero-field{border:1px solid CanvasText} }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="concept-note">Independent design concept. Not affiliated with Celularity Inc. Official investor relations: <a href="https://celularity.com/investor-relations/" target="_blank" rel="noopener">celularity.com/investor-relations</a></div>
+
+<header class="site-nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="#hero"><span class="nav-logo"><img src="img/logo.png" alt="Celularity" width="1366" height="295"></span><span class="nav-tick">Nasdaq: CELU</span></a>
+    <nav aria-label="Primary">
+      <button class="nav-burger" id="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#cenplacel">Cenplacel-L</a></li>
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#manufacturing">Manufacturing</a></li>
+        <li><a href="#performance">Results</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001752828&amp;type=&amp;dateb=&amp;owner=include&amp;count=40" target="_blank" rel="noopener">SEC filings</a></li>
+        <li><a class="btn btn-primary" href="https://celularity.com/wp-content/uploads/Celularity-Investor-Presentation-February-2025.pdf" target="_blank" rel="noopener">Presentation <span class="arw" aria-hidden="true">-&gt;</span></a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="hero" id="hero">
+  <div class="hero-field">
+    <svg class="hero-ring" id="hero-motif" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+      <circle class="ring-a motif-ring" cx="230" cy="300" r="170"/>
+      <circle class="ring-b motif-ring" cx="370" cy="300" r="170"/>
+      <circle class="ring-c motif-ring" cx="230" cy="300" r="118"/>
+      <circle class="ring-d motif-ring" cx="370" cy="300" r="118"/>
+    </svg>
+    <div class="hero-copy">
+      <p class="eyebrow">Nasdaq: CELU &middot; Florham Park, New Jersey</p>
+      <h1>Regenerative and cellular medicine for longevity, derived from the placenta</h1>
+      <p class="hero-sub">Celularity develops and manufactures off-the-shelf allogeneic cell therapies from the postpartum placenta, in its own purpose-built plant. Its most mature therapy, cenplacel-L, became available for investigational use by licensed Florida physicians in June 2026.</p>
+      <div class="hero-cta">
+        <a class="btn btn-light" href="https://celularity.com/wp-content/uploads/Celularity-Investor-Presentation-February-2025.pdf" target="_blank" rel="noopener">View Investor Presentation <span class="arw">&rarr;</span></a>
+        <a class="btn btn-ghost-light" href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">Explore Quarterly Results <span class="arw">&rarr;</span></a>
+      </div>
+      <dl class="proofs">
+        <div><dt>Cell Therapy revenue, Q2 2026</dt><dd>+76%</dd><p>$1.34M vs $0.76M in Q2 2025</p></div>
+        <div><dt>Operating expenses, Q2 2026</dt><dd>55% lower</dd><p>$9.7M vs $21.6M in Q2 2025</p></div>
+        <div><dt>Square feet, Florham Park plant</dt><dd>147,215</dd><p>nine Grade C/ISO 7 and six Grade D/ISO 8 suites</p></div>
+      </dl>
+      <p class="hero-src">Percentages calculated from the <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">Form 10-Q for the quarter ended June 30, 2026</a>; facility per the <a href="https://celularity.com/celularity-and-musecell-innovations-announce-u-s-manufacturing-collaboration-for-the-dezawa-musecell-platform/" target="_blank" rel="noopener">company release of Aug 27, 2026</a>.</p>
+    </div>
+  </div>
+  <figure class="hero-photo">
+    <img src="img/facility-exterior.jpg" width="1251" height="735" alt="Celularity's Florham Park, New Jersey headquarters at dusk, its facade lit in the company's purple and teal">
+    <figcaption>170 Park Avenue, Florham Park, NJ: manufacturing, research and biobanking under one roof</figcaption>
+  </figure>
+</section>
+
+<section class="sec-white cenp" id="cenplacel">
+  <div class="ed">
+    <div class="ed-main">
+      <p class="eyebrow">Lead cell therapy</p>
+      <h2>Cenplacel-L: placental cells, now available to Florida physicians</h2>
+      <p class="lead">Cenplacel-L is Celularity's most mature cell therapy: placenta-derived mesenchymal-like adherent stromal cells (MLASCs), developed over more than two decades of research by Celularity and its predecessor, Celgene Cellular Therapeutics.</p>
+      <p>Florida Statutes &sect; 458.3245 and &sect; 459.0127, effective July 1, 2025, allow licensed physicians to perform certain cell therapies not yet approved by the FDA, under strict sourcing, manufacturing, accreditation and consent requirements. On June 4, 2026 Celularity and Fountain Life announced that cenplacel-L is available for investigational use by licensed physicians in the state, with Fountain Life's longevity-focused physician network as the first clinical channel. Fountain Life's founding partners include Celularity's CEO, Dr. Robert Hariri, and director Dr. Peter H. Diamandis.</p>
+      <ol class="ruled">
+        <li><b>233 subjects</b><span>in the clinical dataset for PDA-001 and PDA-002, across 6 placebo-controlled trials in 5 indications</span><a class="cite" href="https://celularity.com/wp-content/uploads/Celularity-Investor-Presentation-February-2025.pdf" target="_blank" rel="noopener">Deck, Feb 2025</a></li>
+        <li><b>Next indications</b><span>pursuing diabetic foot ulcers; evaluating age-related frailty and other degenerative conditions</span><a class="cite" href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">10-Q, Oct 20, 2026</a></li>
+        <li><b>Inventory on hand</b><span>clinical-grade product held at its FDA-registered, GMP-compliant facility for near-term deployment</span><a class="cite" href="https://celularity.com/celularity-and-fountain-life-announce-availability-of-cenplacel-l-for-investigational-use-under-new-florida-law-establishing-scalable-pathway-for-advancement-of-placental-derived-cell-therapies/" target="_blank" rel="noopener">Release, Jun 4, 2026</a></li>
+      </ol>
+      <p class="note">Cenplacel-L is an investigational cell therapy and has not been approved by the FDA.</p>
+    </div>
+    <figure class="ed-side cenp-plate">
+      <img src="img/cells-mlasc.webp" width="1000" height="1002" alt="Celularity's rendering of placenta-derived mesenchymal-like adherent stromal cells">
+      <figcaption><b>MLASCs</b> Placenta-derived mesenchymal-like adherent stromal cells, the cells in cenplacel-L. Rendering: celularity.com.</figcaption>
+      <dl class="plate-stat"><dt>Cell Therapy revenue, first half 2026</dt><dd>$1.83M</dd><p>vs $1.02M in the first half of 2025 (10-Q)</p></dl>
+    </figure>
+  </div>
+</section>
+
+<section class="sec-dark platform" id="platform">
+  <div class="wrap">
+    <div class="plat-head">
+      <div>
+        <p class="eyebrow">The platform</p>
+        <h2 class="plat-h">One placenta, <span>four businesses</span></h2>
+      </div>
+      <blockquote class="plat-quote">
+        <p>&ldquo;Celularity was founded on the belief that the placenta represents a powerful and ethical biological resource with the potential to transform medicine on a global scale.&rdquo;</p>
+        <cite>Robert J. Hariri, M.D., Ph.D., Founder, Chairman and CEO, <a href="https://celularity.com/celularity-releases-ceo-letter-to-shareholders-2/" target="_blank" rel="noopener">letter to shareholders, Jun 3, 2026</a></cite>
+      </blockquote>
+    </div>
+    <div class="plat-fig">
+      <article class="node n1">
+        <img src="img/cells-mlasc.webp" width="1000" height="1002" alt="" loading="lazy">
+        <p class="node-k">MLASCs</p>
+        <h3>Cenplacel-L</h3>
+        <p>Investigated in Crohn's disease, multiple sclerosis, rheumatoid arthritis, stroke, diabetic foot ulcers and diabetic peripheral neuropathy (10-K 2025).</p>
+      </article>
+      <article class="node n2">
+        <img src="img/cells-nk.webp" width="768" height="768" alt="" loading="lazy">
+        <p class="node-k">NK cells</p>
+        <h3>CYNK-001</h3>
+        <p>Natural killer cells in pre-clinical evaluation for clearing senescent cells, the "senoblative" approach to age-related decline; 71 subjects dosed across earlier clinical-stage indications (deck, Feb 2025).</p>
+      </article>
+      <div class="hub" aria-hidden="true">
+        <svg viewBox="0 0 360 360" focusable="false">
+          <circle class="hub-o motif-hub" cx="180" cy="180" r="166"/>
+          <line class="spoke" x1="0" y1="92" x2="50" y2="122"/>
+          <line class="spoke" x1="0" y1="268" x2="50" y2="238"/>
+          <line class="spoke" x1="360" y1="92" x2="310" y2="122"/>
+          <line class="spoke" x1="360" y1="268" x2="310" y2="238"/>
+          <circle class="hub-dot" cx="0" cy="92" r="4"/>
+          <circle class="hub-dot" cx="0" cy="268" r="4"/>
+          <circle class="hub-dot" cx="360" cy="92" r="4"/>
+          <circle class="hub-dot" cx="360" cy="268" r="4"/>
+          <circle class="hub-a motif-hub" cx="138" cy="180" r="92"/>
+          <circle class="hub-b motif-hub" cx="222" cy="180" r="92"/>
+          <text class="hub-t" x="180" y="174" text-anchor="middle">Postpartum</text>
+          <text class="hub-t" x="180" y="200" text-anchor="middle">placenta</text>
+        </svg>
+      </div>
+      <article class="node n3">
+        <img src="img/stemcell.webp" width="1527" height="800" alt="" loading="lazy">
+        <p class="node-k">Biobanking</p>
+        <h3>LifebankUSA</h3>
+        <p>Collection, processing and storage of umbilical cord and placental blood and tissue for families; $1.90M of revenue in the first half of 2026 (10-Q).</p>
+      </article>
+      <article class="node n4">
+        <img src="img/cells-exosomes.webp" width="1000" height="1002" alt="" loading="lazy">
+        <p class="node-k">Manufacturing for partners</p>
+        <h3>Contract manufacturing</h3>
+        <p>Collaborations to manufacture third-party cell and peptide products in Florham Park, including Dezawa MuseCells and MuseExosomes for MuseCell Innovations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec-tint mfg" id="manufacturing">
+  <figure class="mfg-photo">
+    <img src="img/facility-wing.webp" width="800" height="760" alt="The Florham Park facility's glass entrance and office wing" loading="lazy">
+  </figure>
+  <div class="mfg-copy">
+    <p class="eyebrow">Manufacturing</p>
+    <h2 class="mfg-h">The Process<br> is the <em>Product</em></h2>
+    <p class="lead">A fully integrated, purpose-built manufacturing, translational research and biobanking center, now also contracted to manufacture for other companies.</p>
+    <ol class="diff">
+      <li><span class="dn">01</span><div><b>147,215 square feet</b><p>purpose-built in Florham Park, New Jersey, with process development, manufacturing, quality and biobanking in one building.</p></div></li>
+      <li><span class="dn">02</span><div><b>Nine Grade C/ISO 7 and six Grade D/ISO 8 suites</b><p>a cGMP-ready center designed for commercial production of cellular therapies (release, Aug 27, 2026).</p></div></li>
+      <li><span class="dn">03</span><div><b>$100M invested in cGMP/cGTP manufacturing</b><p>giving more control than outsourcing to contract manufacturers alone (deck, Feb 2025).</p></div></li>
+    </ol>
+    <div class="deals">
+      <p class="deals-h">Announced in 2026</p>
+      <a class="deal" href="https://celularity.com/celularity-and-musecell-innovations-announce-u-s-manufacturing-collaboration-for-the-dezawa-musecell-platform/" target="_blank" rel="noopener"><time datetime="2026-08-27">Aug 27</time><span>MuseCell Innovations: U.S. manufacturing of Dezawa MuseCells and derived products</span><i class="arw">&rarr;</i></a>
+      <a class="deal" href="https://celularity.com/celularity-and-vesalius-longevity-labs-sign-exclusive-collaboration-for-peptual-peptide-apis-manufactured-in-the-united-states/" target="_blank" rel="noopener"><time datetime="2026-10-29">Oct 29</time><span>Vesalius Longevity Labs: exclusive finish manufacturing of Peptual peptide APIs</span><i class="arw">&rarr;</i></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec-white perf" id="performance">
+  <div class="ed">
+    <div class="ed-main">
+      <p class="eyebrow">Results</p>
+      <h2>A leaner company, growing cell therapy sales</h2>
+      <p class="lead">In the second quarter of 2026 Cell Therapy revenue rose 76% and operating expenses fell 55% from the same quarter of 2025. Celularity describes its course in 2026 as a continued strategic transformation: the out-licence of its biomaterials portfolio, a realignment of non-core personnel and a focus on cell therapy for longevity (<a href="https://celularity.com/celularity-announces-filing-of-form-10-k-regains-nasdaq-compliance-and-highlights-continued-strategic-transformation/" target="_blank" rel="noopener">release, May 1, 2026</a>).</p>
+      <figure class="bars">
+        <svg viewBox="0 0 560 268" role="img" aria-labelledby="bars-t bars-d">
+          <title id="bars-t">Second quarter 2025 versus second quarter 2026</title>
+          <desc id="bars-d">Cell Therapy revenue rose from $759 thousand to $1,339 thousand. Operating expenses fell from $21,600 thousand to $9,669 thousand.</desc>
+          <line class="axis" x1="20" y1="236" x2="260" y2="236"/>
+          <line class="axis" x1="300" y1="236" x2="540" y2="236"/>
+          <rect class="b-old" x="52" y="144.9" width="72" height="91.1"/>
+          <rect class="b-ct" x="156" y="75.3" width="72" height="160.7"/>
+          <rect class="b-old" x="332" y="74" width="72" height="162"/>
+          <rect class="b-ox" x="436" y="163.5" width="72" height="72.5"/>
+          <text class="bv" x="88" y="134">$759K</text>
+          <text class="bv" x="192" y="64">$1,339K</text>
+          <text class="bv" x="368" y="63">$21,600K</text>
+          <text class="bv" x="472" y="152">$9,669K</text>
+          <text class="bq" x="88" y="256">2025</text>
+          <text class="bq" x="192" y="256">2026</text>
+          <text class="bq" x="368" y="256">2025</text>
+          <text class="bq" x="472" y="256">2026</text>
+        </svg>
+        <p class="bars-k" aria-hidden="true"><span>Cell Therapy revenue, Q2</span><span>Operating expenses, Q2</span></p>
+        <figcaption>Each pair on its own scale, from zero. Source: <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">Form 10-Q, quarter ended June 30, 2026</a>, segment note and statement of operations.</figcaption>
+      </figure>
+    </div>
+    <aside class="ed-side capital">
+      <p class="cap-h">Capital in 2026</p>
+      <ol class="cap-list">
+        <li><time datetime="2026-02-10">Feb 10</time><b>$12.2M</b><span>net proceeds from the sale of New Jersey net operating losses and R&amp;D tax credits</span></li>
+        <li><time datetime="2026-04">Q2</time><b>$5.4M</b><span>cash from NexGel under the biomaterials licence ($4.8M at closing, $0.6M later in the quarter), within total consideration of $13.3M</span></li>
+        <li><time datetime="2026-09-24">Sep 24</time><b>$11.01M</b><span>principal of senior secured convertible notes at the initial closing, under a facility of up to $25.0M; the 10-Q reports gross proceeds of $9.7M ($8.8M net)</span></li>
+      </ol>
+      <p class="cap-src">Sources: <a href="https://celularity.com/celularity-receives-12-2-million-from-sale-of-new-jersey-net-operating-losses/" target="_blank" rel="noopener">release Feb 10</a>, <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">10-Q for Jun 30, 2026</a>, <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226044421/form8-k.htm" target="_blank" rel="noopener">8-K Sep 28</a>.</p>
+    </aside>
+  </div>
+  <div class="wrap fin-wrap">
+    <div class="table-scroll">
+      <table class="fin">
+        <caption>Quarterly results, USD thousands, as filed (newest first)</caption>
+        <thead><tr><th scope="col">Three months ended</th><th scope="col" class="num">Jun 30, 2026</th><th scope="col" class="num">Mar 31, 2026</th><th scope="col" class="num">Jun 30, 2025</th><th scope="col" class="num">Mar 31, 2025</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Cell Therapy revenue</th><td class="num">1,339</td><td class="num">493</td><td class="num">759</td><td class="num">264</td></tr>
+          <tr><th scope="row">Total revenues</th><td class="num">5,432</td><td class="num">3,846</td><td class="num">5,736</td><td class="num">11,426</td></tr>
+          <tr><th scope="row">Total operating expenses</th><td class="num">9,669</td><td class="num">13,979</td><td class="num">21,600</td><td class="num">21,912</td></tr>
+          <tr><th scope="row">Loss from operations</th><td class="num">(4,237)</td><td class="num">(10,133)</td><td class="num">(15,864)</td><td class="num">(10,486)</td></tr>
+          <tr><th scope="row">Net income (loss)<sup>*</sup></th><td class="num">706</td><td class="num">874</td><td class="num">(24,524)</td><td class="num">(19,754)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fin-note"><sup>*</sup>Net income in 2026 includes non-operating items; the second quarter includes a $6,730K gain on the SLS settlement and a $2,500K loss on the Helena settlement. Sources: <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">10-Q for Jun 30, 2026</a> (filed Oct 20, 2026) and <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226044892/form10-q.htm" target="_blank" rel="noopener">10-Q for Mar 31, 2026</a> (filed Sep 29, 2026).</p>
+    <details class="fin-more">
+      <summary>Segment revenue and full-year results, as filed</summary>
+      <div class="fin-more-body">
+        <div class="table-scroll">
+          <table class="fin">
+            <caption>Net revenues by segment, USD thousands</caption>
+            <thead><tr><th scope="col">Segment</th><th scope="col" class="num">Q2 2026</th><th scope="col" class="num">Q2 2025</th><th scope="col" class="num">6M 2026</th><th scope="col" class="num">6M 2025</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Cell Therapy</th><td class="num">1,339</td><td class="num">759</td><td class="num">1,832</td><td class="num">1,023</td></tr>
+              <tr><th scope="row">BioBanking</th><td class="num">652</td><td class="num">1,275</td><td class="num">1,902</td><td class="num">2,683</td></tr>
+              <tr><th scope="row">Degenerative Disease</th><td class="num">3,441</td><td class="num">3,702</td><td class="num">5,544</td><td class="num">13,456</td></tr>
+              <tr><th scope="row">Total</th><td class="num">5,432</td><td class="num">5,736</td><td class="num">9,278</td><td class="num">17,162</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll">
+          <table class="fin">
+            <caption>Full year, USD (Form 10-K for 2025)</caption>
+            <thead><tr><th scope="col">Year ended December 31</th><th scope="col" class="num">2025</th><th scope="col" class="num">2024</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Total revenues</th><td class="num">$26.55M</td><td class="num">$54.22M</td></tr>
+              <tr><th scope="row">Net loss</th><td class="num">($91.72M)</td><td class="num">($57.89M)</td></tr>
+              <tr><th scope="row">Cash and cash equivalents, year end</th><td class="num">$6.18M</td><td class="num">$0.74M</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fin-note">Degenerative Disease products were out-licensed to NexGel in April 2026. Full-year figures from the <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226020424/form10-k.htm" target="_blank" rel="noopener">Form 10-K filed Apr 30, 2026</a> (accession https://www.sec.gov/Archives/edgar/data/1752828/000149315226020424/0001493152-26-020424-index.htm). Cash and cash equivalents were $586K at June 30, 2026 (10-Q). The filings describe the company's liquidity and capital needs in full.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="sec-dark partners" id="partners">
+  <figure class="ceo">
+    <img src="img/ceo-hariri.webp" width="640" height="640" alt="Robert J. Hariri, M.D., Ph.D., Celularity's founder, chairman and chief executive officer" loading="lazy">
+    <figcaption><b>Robert J. Hariri, M.D., Ph.D.</b> Founder, Chairman and CEO. Co-founded Celularity with Peter H. Diamandis, M.D., who serves as a director.</figcaption>
+  </figure>
+  <div class="part-copy">
+    <div class="part-head">
+      <div>
+        <p class="eyebrow">Partners and board</p>
+        <h2>Who is working with Celularity</h2>
+      </div>
+      <p class="part-dek">Selected 2026 collaborations and board news, newest first</p>
+    </div>
+    <ul class="plist">
+      <li><time datetime="2026-10-29">Oct 29, 2026</time><div><b>Vesalius Longevity Labs</b><p>Exclusive manufacturing agreement to establish a U.S. final-stage API platform for Peptual-branded peptides at the Florham Park facility.</p></div></li>
+      <li><time datetime="2026-09-29">Sep 29, 2026</time><div><b>Naveen Jain appointed to the board</b><p>Founder and CEO of Viome Life Sciences, designated by certain investors in the September 2026 financing; his term begins after the Rule 14f-1 waiting period.</p></div></li>
+      <li><time datetime="2026-08-27">Aug 27, 2026</time><div><b>MuseCell Innovations</b><p>U.S. manufacturing collaboration for the Dezawa MuseCell platform. MCI believes an expanded relationship could result in more than $300 million in aggregate purchases from Celularity over five years; the 10-Q notes the estimate is non-binding and not committed orders.</p></div></li>
+      <li><time datetime="2026-06-04">Jun 4, 2026</time><div><b>Fountain Life</b><p>Initial clinical channel for cenplacel-L under Florida's cell-therapy law, through its longevity-focused physician network. Dr. Hariri and Dr. Diamandis are among its founding partners.</p></div></li>
+      <li><time datetime="2026-03-06">Mar 6, 2026</time><div><b>NexGel</b><p>Exclusive licence of the commercial biomaterials portfolio (amended Apr 17; closing announced Apr 21); many employees on those products moved with the assets.</p></div></li>
+    </ul>
+    <p class="plist-src">Sources: company releases dated as shown and Forms 8-K filed <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226049203/form8-k.htm" target="_blank" rel="noopener">Oct 29</a>, <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226044917/form8-k.htm" target="_blank" rel="noopener">Sep 29</a> and <a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226018220/form8-k.htm" target="_blank" rel="noopener">Apr 21, 2026</a>.</p>
+  </div>
+</section>
+
+<section class="sec-tint news" id="news">
+  <div class="news-copy">
+    <p class="eyebrow">Newsroom</p>
+    <h2>Recent announcements</h2>
+    <ol class="nlist">
+      <li><time datetime="2026-10-29">Oct 29, 2026</time><a href="https://celularity.com/celularity-and-vesalius-longevity-labs-sign-exclusive-collaboration-for-peptual-peptide-apis-manufactured-in-the-united-states/" target="_blank" rel="noopener">Celularity and Vesalius Longevity Labs Sign Exclusive Collaboration for Peptual&reg; Peptide APIs Manufactured in the United States <i class="arw">&rarr;</i></a></li>
+      <li><time datetime="2026-08-27">Aug 27, 2026</time><a href="https://celularity.com/celularity-and-musecell-innovations-announce-u-s-manufacturing-collaboration-for-the-dezawa-musecell-platform/" target="_blank" rel="noopener">Celularity and MuseCell Innovations&reg; Announce U.S. Manufacturing Collaboration for the Dezawa MuseCell&reg; Platform <i class="arw">&rarr;</i></a></li>
+      <li><time datetime="2026-06-04">Jun 4, 2026</time><a href="https://celularity.com/celularity-and-fountain-life-announce-availability-of-cenplacel-l-for-investigational-use-under-new-florida-law-establishing-scalable-pathway-for-advancement-of-placental-derived-cell-therapies/" target="_blank" rel="noopener">Celularity and Fountain Life Announce Availability of Cenplacel-L for Investigational Use Under New Florida Law <i class="arw">&rarr;</i></a></li>
+      <li><time datetime="2026-06-03">Jun 3, 2026</time><a href="https://celularity.com/celularity-releases-ceo-letter-to-shareholders-2/" target="_blank" rel="noopener">Celularity Releases CEO Letter to Shareholders <i class="arw">&rarr;</i></a></li>
+      <li><time datetime="2026-04-21">Apr 21, 2026</time><a href="https://celularity.com/celularity-announces-closing-of-transaction-with-nexgel/" target="_blank" rel="noopener">Celularity Announces Closing of Transaction with NexGel <i class="arw">&rarr;</i></a></li>
+      <li><time datetime="2026-02-10">Feb 10, 2026</time><a href="https://celularity.com/celularity-receives-12-2-million-from-sale-of-new-jersey-net-operating-losses/" target="_blank" rel="noopener">Celularity Receives $12.2 Million from Sale of New Jersey Net Operating Losses <i class="arw">&rarr;</i></a></li>
+    </ol>
+    <a class="btn btn-ghost" href="https://celularity.com/press-releases/" target="_blank" rel="noopener">All press releases <span class="arw">&rarr;</span></a>
+  </div>
+  <figure class="news-photo">
+    <img src="img/hero-cells.jpg" width="560" height="740" alt="Placental cells, from the hero imagery on celularity.com" loading="lazy">
+  </figure>
+</section>
+
+<section class="sec-white inv" id="investors">
+  <div class="inv-field">
+    <p class="eyebrow">Investor information</p>
+    <h2>Follow Celularity</h2>
+    <dl class="inv-facts">
+      <div><dt>Listing</dt><dd>Nasdaq: CELU</dd></div>
+      <div><dt>Class A shares outstanding</dt><dd>32,450,679</dd><p>at Oct 19, 2026 (10-Q cover)</p></div>
+      <div><dt>Headquarters</dt><dd>170 Park Avenue, Florham Park, NJ</dd></div>
+      <div><dt>Investor contact</dt><dd><a href="mailto:info@celularity.com">info@celularity.com</a></dd></div>
+    </dl>
+  </div>
+  <div class="inv-actions">
+    <a class="act" href="https://celularity.com/wp-content/uploads/Celularity-Investor-Presentation-February-2025.pdf" target="_blank" rel="noopener"><span class="act-n">01</span><span><b>View Investor Presentation</b><small>The company's latest posted deck, February 2025 (PDF)</small></span><i class="arw">&rarr;</i></a>
+    <a class="act" href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener"><span class="act-n">02</span><span><b>Explore Quarterly Results</b><small>Form 10-Q for the quarter ended June 30, 2026</small></span><i class="arw">&rarr;</i></a>
+    <a class="act" href="https://celularity.com/sec-filings/?utm_source=mediaconsole&amp;utm_medium=landing-page&amp;utm_campaign=celularity-ir-2026-11&amp;utm_content=investors" target="_blank" rel="noopener"><span class="act-n">03</span><span><b>SEC filings</b><small>Every 10-K, 10-Q, 8-K and proxy on celularity.com and <span class="nowrap">EDGAR</span></small></span><i class="arw">&rarr;</i></a>
+    <a class="act" href="https://celularity.com/investor-relations/email-opt-in/?utm_source=mediaconsole&amp;utm_medium=landing-page&amp;utm_campaign=celularity-ir-2026-11&amp;utm_content=alerts" target="_blank" rel="noopener"><span class="act-n">04</span><span><b>Sign up for investor alerts</b><small>Celularity's email opt-in for news and filings</small></span><i class="arw">&rarr;</i></a>
+    <figure class="inv-photo">
+      <img src="img/ceo-office.jpg" width="624" height="311" alt="Dr. Robert Hariri speaking in a video interview, the Celularity logo on the screen behind him" loading="lazy">
+      <figcaption>Dr. Hariri in a CEO interview featured on celularity.com. More on <a href="https://www.youtube.com/channel/UCosHfzZER3Y8UZ93Rem59sQ" target="_blank" rel="noopener">Celularity's YouTube channel</a>.</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+<div class="foot-top">
+  <img class="foot-logo" src="img/logo-white.png" width="300" height="45" alt="Celularity">
+  <p class="footer-links"><a href="https://celularity.com/investor-relations/?utm_source=mediaconsole&amp;utm_medium=landing-page&amp;utm_campaign=celularity-ir-2026-11&amp;utm_content=footer" target="_blank" rel="noopener">Official investor relations</a><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=0001752828&amp;type=&amp;dateb=&amp;owner=include&amp;count=40" target="_blank" rel="noopener">SEC filings on EDGAR, CIK 0001752828</a><a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226020424/form10-k.htm" target="_blank" rel="noopener">Form 10-K for 2025</a><a href="https://www.sec.gov/Archives/edgar/data/1752828/000149315226047787/form10-q.htm" target="_blank" rel="noopener">Form 10-Q for Q2 2026</a></p>
+</div>
+<p class="fls">Figures come from Celularity's Form 10-K for 2025, its Forms 10-Q for the quarters ended March 31 and June 30, 2026 and its Forms 8-K, each linked where it is used, and are labelled by period; percentage changes are calculated from the filed amounts. Clinical-experience and facility-investment figures are from the company's February 2025 investor presentation; partner and product descriptions are from the company's releases, dated where used. Photographs, cell renderings and the wordmark are the company's own, from celularity.com; the diagrams and charts are drawn for this page from the cited figures. Nothing here is investment advice.</p>
+    <p class="fls"><b>About this page:</b> This is an independent design concept and is not the official Celularity investor relations website. It is not affiliated with, endorsed by, or maintained by Celularity Inc. Figures were assembled from public materials at a point in time and may be outdated; verify every figure against the company's official SEC filings. For official information, visit <a href="https://celularity.com/investor-relations/">celularity.com/investor-relations</a>.</p>
+    <p class="fls"><b>Forward-Looking Statements:</b> This website contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including statements regarding the company's ability to continue as a going concern and to raise additional capital, its indebtedness including the senior secured convertible notes, the development and physician-directed availability of cenplacel-L and its other investigational cell therapies, state and federal regulation of cell therapies and peptide compounding, the performance of its manufacturing collaborations, the timely filing of its periodic reports, and its ability to maintain its Nasdaq listing. These statements involve known and unknown risks, uncertainties, and other factors that may cause actual results to differ materially from those expressed or implied. We undertake no obligation to update any forward-looking statements except as required by law. See the company's SEC filings, including its most recent 10-K and 10-Q, for a full discussion of risk factors.</p>
+    <p class="market-note">Market data, where shown, is delayed at least 15 minutes and provided for this concept only. Real-time quotes and official figures are available through the company's investor relations site and SEC filings. This page shows no share quote. Quarterly figures are from the company's Forms 10-Q for the quarters ended March 31 and June 30, 2026, the latest quarterly reports filed when this page was built.</p>
+  </div>
+</footer>
+
+<script>
+/* mediaconsole motion: inlined by scaffold.mjs at the end of body, identical on every page; never edit it.
+   Sets html.js, runs the ONE reveal observer (fires the mc:reveal hook), scroll-spy, hamburger aria, and the
+   #hero-motif .paused toggle (off-screen, hidden tab, [data-motif-toggle]). Null-guarded: a failure reveals everything. */
+(function(){
+  var d=document,root=d.documentElement;
+  root.classList.add('js');
+  var reduce=!!(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var hasIO='IntersectionObserver' in window;
+  function fire(el,name,detail){
+    var ev;
+    try{ev=new CustomEvent(name,{bubbles:true,detail:detail})}
+    catch(x){ev=d.createEvent('CustomEvent');ev.initCustomEvent(name,true,false,detail)}
+    el.dispatchEvent(ev);
+  }
+  /* mc:reveal fires ONCE per .reveal element, bubbling, as .in lands; detail.reduced is true under reduced motion.
+     Components hook here (counters.js) instead of adding a second observer. */
+  function show(el){
+    if(el.classList.contains('in'))return;
+    el.classList.add('in');
+    fire(el,'mc:reveal',{reduced:reduce});
+  }
+  try{
+    var els=[].slice.call(d.querySelectorAll('.reveal'));
+    if(reduce||!hasIO){els.forEach(show)}
+    else{
+      var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);show(e.target)}})},{threshold:.12});
+      els.forEach(function(el){io.observe(el)});
+    }
+  }catch(err){root.classList.remove('js');[].forEach.call(d.querySelectorAll('.reveal'),function(el){el.classList.add('in')})}
+  try{
+    var burger=d.querySelector('.nav-burger'),links=d.getElementById('nav-links'),nav=d.querySelector('.site-nav');
+    if(burger&&links){
+      var setOpen=function(o){links.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')};
+      burger.addEventListener('click',function(){setOpen(!links.classList.contains('open'))});
+      links.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a'))setOpen(false)});
+      d.addEventListener('keydown',function(e){if((e.key==='Escape'||e.key==='Esc')&&links.classList.contains('open')){setOpen(false);burger.focus()}});
+    }
+    if(nav){var onScroll=function(){nav.classList.toggle('scrolled',window.scrollY>8)};window.addEventListener('scroll',onScroll,{passive:true});onScroll()}
+  }catch(err){}
+  try{
+    var na=[].slice.call(d.querySelectorAll('.nav-links a[href^="#"]:not(.btn)'));
+    if(na.length&&hasIO){
+      var so=new IntersectionObserver(function(en){en.forEach(function(e){
+        if(!e.isIntersecting)return;var id='#'+e.target.id;
+        na.forEach(function(a){var on=a.getAttribute('href')===id;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});
+      })},{rootMargin:'-40% 0px -55% 0px'});
+      na.forEach(function(a){var t=d.getElementById(a.getAttribute('href').slice(1));if(t)so.observe(t)});
+    }
+  }catch(err){}
+  /* hero motif pause: toggles .paused on #hero-motif (off-screen, hidden tab, or the user's [data-motif-toggle]).
+     The class is the whole contract: substrate CSS pauses every CSS animation inside it; JS motifs watch it (wave.js). */
+  try{
+    var motif=d.getElementById('hero-motif');
+    if(motif&&!reduce){
+      var hero=d.getElementById('hero')||motif,hv=true,user=false,tg=[].slice.call(d.querySelectorAll('[data-motif-toggle]'));
+      var sm=function(){var p=user||!hv||d.hidden;motif.classList.toggle('paused',p)};
+      if(hasIO)new IntersectionObserver(function(en){en.forEach(function(e){hv=e.isIntersecting});sm()},{threshold:0}).observe(hero);
+      d.addEventListener('visibilitychange',sm);
+      tg.forEach(function(b){
+        b.setAttribute('aria-pressed','false');
+        b.addEventListener('click',function(){user=!user;tg.forEach(function(t){t.setAttribute('aria-pressed',user?'true':'false')});sm()});
+      });
+    }
+  }catch(err){}
+})();
+</script>
+</body>
+</html>
